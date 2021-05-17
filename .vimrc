@@ -12,6 +12,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
 
 syntax on
@@ -30,6 +31,7 @@ command R !./%
 set autoindent
 set number
 set laststatus=2
+set hlsearch
 
 let g:python_highlight_all = 1
 
@@ -47,3 +49,5 @@ inoremap <silent><expr> <Tab>
 if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   endif
+
+filetype plugin on
